@@ -6,9 +6,11 @@
 #include <android_native_app_glue.h>
 #include <sys/system_properties.h>
 
-std::unique_ptr<App> app;
+// cpp app
+
 void android_main(android_app* state)
 {
+    auto&& app = std::make_unique<App>();
     state->userData = app;
-    
+
 }
